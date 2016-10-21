@@ -5,7 +5,7 @@ $(document).ready(function () {
 
 
     $("#inputArtist").autocomplete({
-        source: artists
+        source: brands
     });
 
     $('.ui-autocomplete, .ui-front').appendTo('.form-horizontal');
@@ -20,20 +20,18 @@ $(document).ready(function () {
 $("#add_album_form").on('submit', function (e) {
     //ajax call here
 
-    var albumTitle = $('#inputTitle')[0].value;
-    var albumArtist = $('#inputArtist')[0].value;
-    var isSamples = $('#samples_checkbox')[0].checked;
+    var model = $('#inputTitle')[0].value;
+    var brand = $('#inputArtist')[0].value;
     //alert(isSamples);
 
     var cookie = getCookie('MusicDB_token');
-    var url_rest = base_url_rest + 'addAlbum';
+    var url_rest = base_url_rest + 'addCar';
 
     $.post(url_rest,
         {
             token: cookie,
-            albumArtist: albumArtist,
-            albumTitle: albumTitle,
-            sampled: isSamples
+            brand: brand,
+            model: model
         },
         function (data, status) {
             var json = data;
