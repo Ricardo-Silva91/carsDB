@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>CarsDB | Add Car</title>
+    <title>MusicDB | Add Album</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
@@ -35,9 +35,9 @@
         <!-- Logo -->
         <a href="home.html" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>C</b>DB</span>
+            <span class="logo-mini"><b>M</b>DB</span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>Cars</b>DB</span>
+            <span class="logo-lg"><b>Music</b>DB</span>
         </a>
 
         <!-- Header Navbar: style can be found in header.less -->
@@ -52,8 +52,8 @@
                     <!-- User Account: style can be found in dropdown.less -->
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="/data/pics/notAvaliable.jpg" class="user-image user_pic" alt="User Image">
-                            <span class="hidden-xs user_name">Jose</span>
+                            <img src="/data/pics/0.jpg" class="user-image user_pic" alt="User Image">
+                            <span class="hidden-xs user_name">Rofler</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
@@ -61,7 +61,7 @@
                                 <img src="img/404.gif" class="img-circle user_pic" alt="User Image">
 
                                 <p class="user_name">
-                                    Jose
+                                    Rofler
                                 </p>
                             </li>
                             <!-- Menu Footer-->
@@ -85,10 +85,10 @@
             <!-- Sidebar user panel -->
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="/data/pics/notAvaliable.jpg" class="img-circle" alt="User Image">
+                    <img src="/data/pics/0.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p class="user_name">Jose</p>
+                    <p class="user_name">Rofler</p>
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>
@@ -130,12 +130,12 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Add Car
+                Add Album
                 <small>Version 2.0</small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">Add Car</li>
+                <li class="active">Add Album</li>
             </ol>
         </section>
 
@@ -144,24 +144,33 @@
 
             <div class="box box-info">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Initial Car Details</h3>
+                    <h3 class="box-title">Initial Album Details</h3>
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
                 <form class="form-horizontal" id="add_album_form">
                     <div class="box-body">
                         <div class="form-group">
-                            <label for="inputTitle" class="col-sm-2 control-label">Model</label>
+                            <label for="inputTitle" class="col-sm-2 control-label">Title</label>
 
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputTitle" placeholder="Model...">
+                                <input type="text" class="form-control" id="inputTitle" placeholder="title...">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputArtist" class="col-sm-2 control-label">Brand</label>
+                            <label for="inputArtist" class="col-sm-2 control-label">Artist</label>
 
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputArtist" placeholder="Brand...">
+                                <input type="text" class="form-control" id="inputArtist" placeholder="artist...">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" id="samples_checkbox"> Is this for samples?
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>

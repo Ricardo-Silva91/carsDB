@@ -19,11 +19,11 @@ function getCookie(cname) {
     return "";
 }
 
-function searchTitleBrief(model) {
+function searchTitleBrief(title) {
     var res = -1;
 
-    for (var i = 0; i < cars.length; i++) {
-        if (model == cars[i]['model']) {
+    for (var i = 0; i < albums.length; i++) {
+        if (title == albums[i]['title']) {
             res = i;
             break;
         }
@@ -33,11 +33,11 @@ function searchTitleBrief(model) {
 }
 
 
-function searchTitle(model, brand) {
+function searchTitle(title, artist) {
     var res = -1;
 
-    for (var i = 0; i < cars.length; i++) {
-        if (model == cars[i]['model'] && brand == cars[i]['brand']) {
+    for (var i = 0; i < albums.length; i++) {
+        if (title == albums[i]['title'] && artist == albums[i]['artist']) {
             res = i;
             break;
         }
@@ -46,26 +46,26 @@ function searchTitle(model, brand) {
     return res;
 }
 
-function getArtistsPerAlbum(model) {
+function getArtistsPerAlbum(title) {
     var res = [];
 
-    for (var i = 0; i < cars.length; i++) {
-        if (model == cars[i]['model']) {
-            res[res.length] = cars[i]['brand'];
-            //alert(cars[i]['artist']);
+    for (var i = 0; i < albums.length; i++) {
+        if (title == albums[i]['title']) {
+            res[res.length] = albums[i]['artist'];
+            //alert(albums[i]['artist']);
         }
     }
 
     return res;
 }
 
-function getAlbumsPerArtist(brand) {
+function getAlbumsPerArtist(artist) {
     var res = [];
 
-    for (var i = 0; i < cars.length; i++) {
-        if (brand == cars[i]['brand']) {
-            res[res.length] = cars[i]['model'];
-            //alert(cars[i]['artist']);
+    for (var i = 0; i < albums.length; i++) {
+        if (artist == albums[i]['artist']) {
+            res[res.length] = albums[i]['title'];
+            //alert(albums[i]['artist']);
         }
     }
 
@@ -126,13 +126,13 @@ $(".btn-logout").click(function () {
 $(".sidebar-form").on('submit', function (e) {
     //ajax call here
 
-    var model = $('#search_input_titles')[0].value;
-    var brand = $('#search_input_artists')[0].value;
-    var carPos = searchTitle(model, brand);
+    var albumTitle = $('#search_input_titles')[0].value;
+    var albumArtist = $('#search_input_artists')[0].value;
+    var albumPos = searchTitle(albumTitle, albumArtist);
     //alert('album pos: ' + albumPos);
 
-    if (carPos != -1) {
-        window.location.href = "editAlbum.html?id=" + carPos;
+    if (albumPos != -1) {
+        window.location.href = "editAlbum.html?id=" + albumPos;
     }
     else {
         alert('Album not in Database');
@@ -144,13 +144,13 @@ $(".sidebar-form").on('submit', function (e) {
 });
 
 $('input#search_input_titles').on('keyup click', function () {
-    var model = $('#search_input_titles')[0].value;
-    var brand = getArtistsPerAlbum(model);
+    var albumTitle = $('#search_input_titles')[0].value;
+    var albumArtists = getArtistsPerAlbum(albumTitle);
     //console.log(albumArtists[0]);
     $("#search_input_artists").autocomplete({
-        source: brand
+        source: albumArtists
     });
-    $('#search_input_artists')[0].value = brand[0];
+    $('#search_input_artists')[0].value = albumArtists[0];
 
 });
 /*
@@ -170,11 +170,11 @@ $(document).ready(function () {
 
 
     $("#search_input_titles").autocomplete({
-        source: models
+        source: titles
     });
 
     $("#search_input_artists").autocomplete({
-        source: brands
+        source: artists
     });
 
     $('.ui-autocomplete, .ui-front').appendTo('#sidebar');

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>MusicDB | Edit Car</title>
+    <title>MusicDB | Edit Album</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
@@ -53,8 +53,8 @@
                     <!-- User Account: style can be found in dropdown.less -->
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="/data/pics/notAvaliable.jpg" class="user-image user_pic" alt="User Image">
-                            <span class="hidden-xs user_name">Jose</span>
+                            <img src="/data/pics/0.jpg" class="user-image user_pic" alt="User Image">
+                            <span class="hidden-xs user_name">Rofler</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
@@ -62,7 +62,7 @@
                                 <img src="img/404.gif" class="img-circle user_pic" alt="User Image">
 
                                 <p class="user_name">
-                                    Jose
+                                    Rofler
                                 </p>
                             </li>
                             <!-- Menu Footer-->
@@ -86,10 +86,10 @@
             <!-- Sidebar user panel -->
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="/data/pics/notAvaliable.jpg" class="img-circle" alt="User Image">
+                    <img src="/data/pics/0.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p class="user_name">Jose</p>
+                    <p class="user_name">Rofler</p>
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>
@@ -131,7 +131,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Edit Car:
+                Edit Album:
                 <small>Id:</small>
                 <small id="albumIdLabel">-1</small>
                 <small><strong> date included: </strong></small>
@@ -139,7 +139,7 @@
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">Edit Car</li>
+                <li class="active">Edit Album</li>
             </ol>
         </section>
 
@@ -150,7 +150,7 @@
 
                     <div class="box box-info">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Car Details</h3>
+                            <h3 class="box-title">Album Details</h3>
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
@@ -158,26 +158,25 @@
                             <div class="box-body">
                                 <div class="form-group">
 
-                                    <label for="inputTitle" class="col-sm-2 control-label">Model</label>
+                                    <label for="inputTitle" class="col-sm-2 control-label">Title</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputTitle" placeholder="Model...">
+                                        <input type="text" class="form-control" id="inputTitle" placeholder="title...">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputArtist" class="col-sm-2 control-label">Brand</label>
+                                    <label for="inputArtist" class="col-sm-2 control-label">Artist</label>
 
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="inputArtist"
-                                               placeholder="Brand...">
+                                               placeholder="artist...">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputGenre" class="col-sm-2 control-label">Replica Brand</label>
+                                    <label for="inputGenre" class="col-sm-2 control-label">Genre</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputGenre"
-                                               placeholder="Replica Brand...">
+                                        <input type="text" class="form-control" id="inputGenre" placeholder="genre...">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -192,7 +191,7 @@
                                     <div class="col-sm-offset-2 col-sm-10">
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" id="approved_checkbox"> Is this replica official?
+                                                <input type="checkbox" id="approved_checkbox"> Is this album approved?
                                             </label>
                                         </div>
                                     </div>
@@ -205,397 +204,395 @@
                             <!-- /.box-footer -->
                         </form>
                     </div>
-                    <!--
-                                        <div class="box box-success">
-                                            <div class="box-header">
-                                                <h3 class="box-title">Track List:</h3>
-                                            </div>
-                                            <div class="box-body">
-                                                <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
-                                                    <div class="row">
-                                                        <div class="col-sm-6"></div>
-                                                        <div class="col-sm-6"></div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-sm-12">
-                                                            <table id="tracksTable" class="table table-bordered table-hover dataTable"
-                                                                   role="grid" aria-describedby="example2_info">
-                                                                <thead>
-                                                                <tr role="row">
-                                                                    <th class="sorting_asc" style="width: 2%;" tabindex="0"
-                                                                        aria-controls="tracksTable"
-                                                                        rowspan="1" colspan="1" aria-sort="ascending"
-                                                                        aria-label="Rendering engine: activate to sort column descending">
-                                                                        #
-                                                                    </th>
-                                                                    <th class="sorting" tabindex="0" aria-controls="tracksTable" rowspan="1"
-                                                                        colspan="1" aria-label="Browser: activate to sort column ascending">
-                                                                        Title
-                                                                    </th>
-                                                                </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                </tbody>
-                                                                <tfoot>
-                                                                </tfoot>
-                                                            </table>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="box-footer">
-                                                <button id="add_track_btn" class="btn btn-info pull-right">Add Track</button>
-                                            </div>
-
-
-                                    </div>-->
-
-
-                <div class="box box-danger">
-                    <div class="box-header">
-                        <h3 class="box-title">Cover:</h3>
-                    </div>
-                    <!-- /.box-header -->
-                    <form class="form-horizontal" enctype="multipart/form-data" id="upload_pic_form">
+                    <div class="box box-success">
+                        <div class="box-header">
+                            <h3 class="box-title">Track List:</h3>
+                        </div>
+                        <!-- /.box-header -->
                         <div class="box-body">
-                            <div class="form-group text-center center-block"
-                                 style="margin-right: 0px; margin-left: 0px">
-                                <label for="inputPic">Upload Picture</label>
-                                <input class="btn-danger" name="myImage" style="margin: auto" type="file" id="inputPic"
-                                       accept=".jpg, .png">
-
-                                <p class="help-block">Upload Car cover pic.</p>
+                            <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+                                <div class="row">
+                                    <div class="col-sm-6"></div>
+                                    <div class="col-sm-6"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <table id="tracksTable" class="table table-bordered table-hover dataTable"
+                                               role="grid" aria-describedby="example2_info">
+                                            <thead>
+                                            <tr role="row">
+                                                <th class="sorting_asc" style="width: 2%;" tabindex="0"
+                                                    aria-controls="tracksTable"
+                                                    rowspan="1" colspan="1" aria-sort="ascending"
+                                                    aria-label="Rendering engine: activate to sort column descending">
+                                                    #
+                                                </th>
+                                                <th class="sorting" tabindex="0" aria-controls="tracksTable" rowspan="1"
+                                                    colspan="1" aria-label="Browser: activate to sort column ascending">
+                                                    Title
+                                                </th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                            <tfoot>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-info pull-right">Submit</button>
+                            <button id="add_track_btn" class="btn btn-info pull-right">Add Track</button>
                         </div>
-                    </form>
+
+                        <!-- /.box-body -->
+                    </div>
 
 
-                    <!-- /.box-body -->
+                    <div class="box box-danger">
+                        <div class="box-header">
+                            <h3 class="box-title">Cover:</h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <form class="form-horizontal" enctype="multipart/form-data" id="upload_pic_form">
+                            <div class="box-body">
+                                <div class="form-group text-center center-block" style="margin-right: 0px; margin-left: 0px">
+                                    <label for="inputPic">Upload Picture</label>
+                                    <input class="btn-danger" name="myImage" style="margin: auto" type="file" id="inputPic" accept=".jpg, .png">
+
+                                    <p class="help-block">Upload album cover pic.</p>
+                                </div>
+                            </div>
+                            <div class="box-footer">
+                                <button type="submit" class="btn btn-info pull-right">Submit</button>
+                            </div>
+                        </form>
+
+
+                        <!-- /.box-body -->
+                    </div>
+
                 </div>
+                <div class="col-md-6">
+                    <div class="box box-info">
+                        <img style="height: 100%; width: 100%" id="albumPicShow" src="">
+
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+            <b>Version</b> 0.1.0
+        </div>
+        <strong>Copyright &copy; BadReviews 2016.</strong>
+    </footer>
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Create the tabs -->
+        <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+            <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+            <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <!-- Home tab content -->
+            <div class="tab-pane" id="control-sidebar-home-tab">
+                <h3 class="control-sidebar-heading">Recent Activity</h3>
+                <ul class="control-sidebar-menu">
+                    <li>
+                        <a href="javascript:void(0)">
+                            <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+
+                            <div class="menu-info">
+                                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+
+                                <p>Will be 23 on April 24th</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <i class="menu-icon fa fa-user bg-yellow"></i>
+
+                            <div class="menu-info">
+                                <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
+
+                                <p>New phone +1(800)555-1234</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
+
+                            <div class="menu-info">
+                                <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
+
+                                <p>nora@example.com</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <i class="menu-icon fa fa-file-code-o bg-green"></i>
+
+                            <div class="menu-info">
+                                <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
+
+                                <p>Execution time 5 seconds</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <!-- /.control-sidebar-menu -->
+
+                <h3 class="control-sidebar-heading">Tasks Progress</h3>
+                <ul class="control-sidebar-menu">
+                    <li>
+                        <a href="javascript:void(0)">
+                            <h4 class="control-sidebar-subheading">
+                                Custom Template Design
+                                <span class="label label-danger pull-right">70%</span>
+                            </h4>
+
+                            <div class="progress progress-xxs">
+                                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <h4 class="control-sidebar-subheading">
+                                Update Resume
+                                <span class="label label-success pull-right">95%</span>
+                            </h4>
+
+                            <div class="progress progress-xxs">
+                                <div class="progress-bar progress-bar-success" style="width: 95%"></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <h4 class="control-sidebar-subheading">
+                                Laravel Integration
+                                <span class="label label-warning pull-right">50%</span>
+                            </h4>
+
+                            <div class="progress progress-xxs">
+                                <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <h4 class="control-sidebar-subheading">
+                                Back End Framework
+                                <span class="label label-primary pull-right">68%</span>
+                            </h4>
+
+                            <div class="progress progress-xxs">
+                                <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <!-- /.control-sidebar-menu -->
 
             </div>
-            <div class="col-md-6">
-                <div class="box box-info">
-                    <img style="height: 100%; width: 100%" id="albumPicShow" src="">
+            <!-- /.tab-pane -->
 
+            <!-- Settings tab content -->
+            <div class="tab-pane" id="control-sidebar-settings-tab">
+                <form method="post">
+                    <h3 class="control-sidebar-heading">General Settings</h3>
 
-                </div>
+                    <div class="form-group">
+                        <label class="control-sidebar-subheading">
+                            Report panel usage
+                            <input type="checkbox" class="pull-right" checked>
+                        </label>
 
+                        <p>
+                            Some information about this general settings option
+                        </p>
+                    </div>
+                    <!-- /.form-group -->
+
+                    <div class="form-group">
+                        <label class="control-sidebar-subheading">
+                            Allow mail redirect
+                            <input type="checkbox" class="pull-right" checked>
+                        </label>
+
+                        <p>
+                            Other sets of options are available
+                        </p>
+                    </div>
+                    <!-- /.form-group -->
+
+                    <div class="form-group">
+                        <label class="control-sidebar-subheading">
+                            Expose author name in posts
+                            <input type="checkbox" class="pull-right" checked>
+                        </label>
+
+                        <p>
+                            Allow the user to show his name in blog posts
+                        </p>
+                    </div>
+                    <!-- /.form-group -->
+
+                    <h3 class="control-sidebar-heading">Chat Settings</h3>
+
+                    <div class="form-group">
+                        <label class="control-sidebar-subheading">
+                            Show me as online
+                            <input type="checkbox" class="pull-right" checked>
+                        </label>
+                    </div>
+                    <!-- /.form-group -->
+
+                    <div class="form-group">
+                        <label class="control-sidebar-subheading">
+                            Turn off notifications
+                            <input type="checkbox" class="pull-right">
+                        </label>
+                    </div>
+                    <!-- /.form-group -->
+
+                    <div class="form-group">
+                        <label class="control-sidebar-subheading">
+                            Delete chat history
+                            <a href="javascript:void(0)" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
+                        </label>
+                    </div>
+                    <!-- /.form-group -->
+                </form>
             </div>
-    </div>
-    </section>
-    <!-- /.content -->
-</div>
-<!-- /.content-wrapper -->
-
-<footer class="main-footer">
-    <div class="pull-right hidden-xs">
-        <b>Version</b> 0.1.0
-    </div>
-    <strong>Copyright &copy; BadReviews 2016.</strong>
-</footer>
-
-<!-- Control Sidebar -->
-<aside class="control-sidebar control-sidebar-dark">
-    <!-- Create the tabs -->
-    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-        <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-        <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-    </ul>
-    <!-- Tab panes -->
-    <div class="tab-content">
-        <!-- Home tab content -->
-        <div class="tab-pane" id="control-sidebar-home-tab">
-            <h3 class="control-sidebar-heading">Recent Activity</h3>
-            <ul class="control-sidebar-menu">
-                <li>
-                    <a href="javascript:void(0)">
-                        <i class="menu-icon fa fa-birthday-cake bg-red"></i>
-
-                        <div class="menu-info">
-                            <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-
-                            <p>Will be 23 on April 24th</p>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)">
-                        <i class="menu-icon fa fa-user bg-yellow"></i>
-
-                        <div class="menu-info">
-                            <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
-
-                            <p>New phone +1(800)555-1234</p>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)">
-                        <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
-
-                        <div class="menu-info">
-                            <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
-
-                            <p>nora@example.com</p>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)">
-                        <i class="menu-icon fa fa-file-code-o bg-green"></i>
-
-                        <div class="menu-info">
-                            <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
-
-                            <p>Execution time 5 seconds</p>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-            <!-- /.control-sidebar-menu -->
-
-            <h3 class="control-sidebar-heading">Tasks Progress</h3>
-            <ul class="control-sidebar-menu">
-                <li>
-                    <a href="javascript:void(0)">
-                        <h4 class="control-sidebar-subheading">
-                            Custom Template Design
-                            <span class="label label-danger pull-right">70%</span>
-                        </h4>
-
-                        <div class="progress progress-xxs">
-                            <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)">
-                        <h4 class="control-sidebar-subheading">
-                            Update Resume
-                            <span class="label label-success pull-right">95%</span>
-                        </h4>
-
-                        <div class="progress progress-xxs">
-                            <div class="progress-bar progress-bar-success" style="width: 95%"></div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)">
-                        <h4 class="control-sidebar-subheading">
-                            Laravel Integration
-                            <span class="label label-warning pull-right">50%</span>
-                        </h4>
-
-                        <div class="progress progress-xxs">
-                            <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)">
-                        <h4 class="control-sidebar-subheading">
-                            Back End Framework
-                            <span class="label label-primary pull-right">68%</span>
-                        </h4>
-
-                        <div class="progress progress-xxs">
-                            <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-            <!-- /.control-sidebar-menu -->
-
+            <!-- /.tab-pane -->
         </div>
-        <!-- /.tab-pane -->
+    </aside>
+    <!-- /.control-sidebar -->
+    <!-- Add the sidebar's background. This div must be placed
+         immediately after the control sidebar -->
+    <div class="control-sidebar-bg"></div>
 
-        <!-- Settings tab content -->
-        <div class="tab-pane" id="control-sidebar-settings-tab">
-            <form method="post">
-                <h3 class="control-sidebar-heading">General Settings</h3>
+    <div id="#modals">
 
-                <div class="form-group">
-                    <label class="control-sidebar-subheading">
-                        Report panel usage
-                        <input type="checkbox" class="pull-right" checked>
-                    </label>
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
 
-                    <p>
-                        Some information about this general settings option
-                    </p>
-                </div>
-                <!-- /.form-group -->
-
-                <div class="form-group">
-                    <label class="control-sidebar-subheading">
-                        Allow mail redirect
-                        <input type="checkbox" class="pull-right" checked>
-                    </label>
-
-                    <p>
-                        Other sets of options are available
-                    </p>
-                </div>
-                <!-- /.form-group -->
-
-                <div class="form-group">
-                    <label class="control-sidebar-subheading">
-                        Expose author name in posts
-                        <input type="checkbox" class="pull-right" checked>
-                    </label>
-
-                    <p>
-                        Allow the user to show his name in blog posts
-                    </p>
-                </div>
-                <!-- /.form-group -->
-
-                <h3 class="control-sidebar-heading">Chat Settings</h3>
-
-                <div class="form-group">
-                    <label class="control-sidebar-subheading">
-                        Show me as online
-                        <input type="checkbox" class="pull-right" checked>
-                    </label>
-                </div>
-                <!-- /.form-group -->
-
-                <div class="form-group">
-                    <label class="control-sidebar-subheading">
-                        Turn off notifications
-                        <input type="checkbox" class="pull-right">
-                    </label>
-                </div>
-                <!-- /.form-group -->
-
-                <div class="form-group">
-                    <label class="control-sidebar-subheading">
-                        Delete chat history
-                        <a href="javascript:void(0)" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
-                    </label>
-                </div>
-                <!-- /.form-group -->
-            </form>
-        </div>
-        <!-- /.tab-pane -->
-    </div>
-</aside>
-<!-- /.control-sidebar -->
-<!-- Add the sidebar's background. This div must be placed
-     immediately after the control sidebar -->
-<div class="control-sidebar-bg"></div>
-
-<div id="#modals">
-
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 style="color:red;"><span class="glyphicon glyphicon-lock"></span> Login</h4>
-                </div>
-                <div class="modal-body">
-                    <form role="form">
-                        <div class="form-group">
-                            <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
-                            <input type="text" class="form-control" id="usrname" placeholder="Enter email">
-                        </div>
-                        <div class="form-group">
-                            <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-                            <input type="text" class="form-control" id="psw" placeholder="Enter password">
-                        </div>
-                        <div class="checkbox">
-                            <label><input type="checkbox" value="" checked>Remember me</label>
-                        </div>
-                        <button type="submit" class="btn btn-default btn-success btn-block"><span
-                                class="glyphicon glyphicon-off"></span> Login
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 style="color:red;"><span class="glyphicon glyphicon-lock"></span> Login</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+                                <input type="text" class="form-control" id="usrname" placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                                <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+                                <input type="text" class="form-control" id="psw" placeholder="Enter password">
+                            </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox" value="" checked>Remember me</label>
+                            </div>
+                            <button type="submit" class="btn btn-default btn-success btn-block"><span
+                                    class="glyphicon glyphicon-off"></span> Login
+                            </button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-default btn-default pull-left" data-dismiss="modal"><span
+                                class="glyphicon glyphicon-remove"></span> Cancel
                         </button>
-                    </form>
+                        <p>Not a member? <a href="#">Sign Up</a></p>
+                        <p>Forgot <a href="#">Password?</a></p>
+                    </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-default btn-default pull-left" data-dismiss="modal"><span
-                            class="glyphicon glyphicon-remove"></span> Cancel
-                    </button>
-                    <p>Not a member? <a href="#">Sign Up</a></p>
-                    <p>Forgot <a href="#">Password?</a></p>
+            </div>
+        </div>
+
+        <div class="modal fade" id="edit_track_modal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span></button>
+                        <h4 class="modal-title">Edit Track</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form role="form" id="edit_track_form">
+                            <div class="form-group">
+                                <label for="edit_track_modal_track_number"><span
+                                        class="glyphicon glyphicon-queen"></span> Track number</label>
+                                <input type="number" class="form-control" id="edit_track_modal_track_number">
+                            </div>
+                            <div class="form-group">
+                                <label for="edit_track_modal_track_title"><span
+                                        class="glyphicon glyphicon-knight"></span> Track title</label>
+                                <input type="text" class="form-control" id="edit_track_modal_track_title">
+                            </div>
+                            <button type="submit" id="edit_track_submit_btn" value="edit_track"
+                                    class="btn btn-default btn-success btn-block"><span
+                                    class="glyphicon glyphicon-off"></span> submit
+                            </button>
+                            <button type="submit" id="edit_track_delete_btn" value="delete_track"
+                                    class="btn btn-default btn-danger btn-block"><span
+                                    class="glyphicon glyphicon-off"></span> delete track
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="add_track_modal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span></button>
+                        <h4 class="modal-title">Add Track</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form role="form" id="add_track_form">
+                            <div class="form-group">
+                                <label for="add_modal_track_number"><span class="glyphicon glyphicon-queen"></span>
+                                    Track number</label>
+                                <input type="number" class="form-control" id="add_modal_track_number">
+                            </div>
+                            <div class="form-group">
+                                <label for="add_modal_track_title"><span class="glyphicon glyphicon-knight"></span>
+                                    Track title</label>
+                                <input type="text" class="form-control" id="add_modal_track_title">
+                            </div>
+                            <button type="submit" id="add_track_submit_btn"
+                                    class="btn btn-default btn-success btn-block"><span
+                                    class="glyphicon glyphicon-off"></span> submit
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="modal fade" id="edit_track_modal" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span></button>
-                    <h4 class="modal-title">Edit Track</h4>
-                </div>
-                <div class="modal-body">
-                    <form role="form" id="edit_track_form">
-                        <div class="form-group">
-                            <label for="edit_track_modal_track_number"><span
-                                    class="glyphicon glyphicon-queen"></span> Track number</label>
-                            <input type="number" class="form-control" id="edit_track_modal_track_number">
-                        </div>
-                        <div class="form-group">
-                            <label for="edit_track_modal_track_title"><span
-                                    class="glyphicon glyphicon-knight"></span> Track title</label>
-                            <input type="text" class="form-control" id="edit_track_modal_track_title">
-                        </div>
-                        <button type="submit" id="edit_track_submit_btn" value="edit_track"
-                                class="btn btn-default btn-success btn-block"><span
-                                class="glyphicon glyphicon-off"></span> submit
-                        </button>
-                        <button type="submit" id="edit_track_delete_btn" value="delete_track"
-                                class="btn btn-default btn-danger btn-block"><span
-                                class="glyphicon glyphicon-off"></span> delete track
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="modal fade" id="add_track_modal" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span></button>
-                    <h4 class="modal-title">Add Track</h4>
-                </div>
-                <div class="modal-body">
-                    <form role="form" id="add_track_form">
-                        <div class="form-group">
-                            <label for="add_modal_track_number"><span class="glyphicon glyphicon-queen"></span>
-                                Track number</label>
-                            <input type="number" class="form-control" id="add_modal_track_number">
-                        </div>
-                        <div class="form-group">
-                            <label for="add_modal_track_title"><span class="glyphicon glyphicon-knight"></span>
-                                Track title</label>
-                            <input type="text" class="form-control" id="add_modal_track_title">
-                        </div>
-                        <button type="submit" id="add_track_submit_btn"
-                                class="btn btn-default btn-success btn-block"><span
-                                class="glyphicon glyphicon-off"></span> submit
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 </div>
 
