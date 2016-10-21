@@ -18,7 +18,7 @@ function getCookie(cname) {
 }
 
 var cookie = getCookie('MusicDB_token');
-var url_rest = base_url_rest + 'numberOfAlbums?token=' + cookie;
+var url_rest = base_url_rest + 'numberOfCars?token=' + cookie;
 
 
 $.ajax({
