@@ -35,7 +35,7 @@ $(document).ready(function () {
     {
         elem = document.createElement('li');
         //console.log(base_url_for_pics + cars[i]['pic_name']);
-        elem_child1 = '<a href="editAlbum.html?id=' + i + '"><img style="width: 60%; height: 50%" src=' + base_url_for_pics + cars[i]['pic_name'] + ' alt="User Image"> </a><a class="users-list-name" href="editAlbum.html?id=' + i + '">' + cars[i]['title'] + '</a><span class="users-list-date">' + cars[i]['artist'] + '</span>';//document.createElement('li');
+        elem_child1 = '<a href="editAlbum.html?id=' + i + '"><img style="width: 60%; height: 50%" src=' + base_url_for_pics + cars[i]['pic_name'] + ' alt="User Image"> </a><a class="users-list-name" href="editAlbum.html?id=' + i + '">' + cars[i]['model'] + '</a><span class="users-list-date">' + cars[i]['brand'] + '</span>';//document.createElement('li');
         elem.innerHTML = elem_child1;
         $('#new_albums_painting')[0].appendChild(elem);
     }
