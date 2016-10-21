@@ -1,7 +1,7 @@
 /**
  * Created by rofler on 8/28/16.
  */
- var going_local = true;
+ var going_local = false;
 
  if (going_local) {
 	var base_url_rest = "http://localhost:8080/";
@@ -9,6 +9,6 @@
  }
  else
  {
-	var base_url_rest = "https://localhost:8080/";
-	var base_url_for_pics = "https://localhost:443/getPicture?pic_name=";
+	var base_url_rest = "https://carsdbrest.herokuapp.com/";
+	var base_url_for_pics = "https://carsdbrest.herokuapp.com/getPicture?pic_name=";
  }
