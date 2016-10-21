@@ -2,10 +2,8 @@
  * Created by rofler on 8/29/16.
  */
 
-var oldTitle;
-var oldArtist;
-var oldTrackTitle;
-var oldTrackNumber;
+var oldModel;
+var oldBrand;
 var files;
 var must_delete = false;
 
@@ -15,34 +13,25 @@ $(document).ready(function () {
 
     //alert('album ID: ' + id);
     $('#albumIdLabel')[0].innerText = id;
-    $('#date_included')[0].innerText = albums[id]['date_included'];
-    $('#inputTitle')[0].value = albums[id]['title'];
-    $('#inputArtist')[0].value = albums[id]['artist'];
-    $('#inputGenre')[0].value = albums[id]['genre'];
-    $('#inputComment')[0].value = albums[id]['comment'];
-    $('#approved_checkbox')[0].checked = albums[id]['approved'];
+    $('#date_included')[0].innerText = cars[id]['date_included'];
+    $('#inputTitle')[0].value = cars[id]['model'];
+    $('#inputArtist')[0].value = cars[id]['brand'];
+    $('#inputGenre')[0].value = cars[id]['replica_brand'];
+    $('#inputComment')[0].value = cars[id]['comment'];
 
     //if (imageExists(base_url_for_pics + albums[id]['pic_name'])) {
         //alert('will load pic')
-        $("#albumPicShow").attr("src", base_url_for_pics + albums[id]['pic_name']);
+        $("#albumPicShow").attr("src", base_url_for_pics + cars[id]['pic_name']);
     //}
     //else {
     //    $("#albumPicShow").attr("src", 'img/404.gif');
         //alert('nope')
     //}
 
-    var t = $('#tracksTable').DataTable();
-
-    for (var it = 0; it < albums[id]['tracks'].length; it++) {
-        t.row.add([
-            albums[id]['tracks'][it]['number'],
-            albums[id]['tracks'][it]['title']
-        ]).draw(false);
-    }
 
 
     $("#inputArtist").autocomplete({
-        source: artists
+        source: brands
     });
 
     $('.ui-autocomplete, .ui-front').appendTo('#edit_album_form');
@@ -50,8 +39,8 @@ $(document).ready(function () {
     $('.ui-autocomplete').attr('style', "display: none; width: 251px; position: relative; top: -303px; left: 15px; cursor: pointer; z-index: 99;");
 
 
-    oldTitle = albums[id]['title'];
-    oldArtist = albums[id]['artist'];
+    oldModel = cars[id]['model'];
+    oldBrand = cars[id]['brand'];
 
 // Add events
     $('input[type=file]#inputPic').on('change', prepareUpload);
@@ -65,29 +54,6 @@ $(document).ready(function () {
 
 });
 
-$('#tracksTable tbody').on('click', 'tr', function () {
-
-    $('#edit_track_modal_track_number')[0].value = $(this).children()[0].innerText;
-    $('#edit_track_modal_track_title')[0].value = $(this).children()[1].innerText;
-    oldTrackNumber = $(this).children()[0].innerText;
-    oldTrackTitle = $(this).children()[1].innerText;
-
-
-    $('#edit_track_modal').modal();
-    $('#edit_track_modal').modal('show');
-    $(this).toggleClass('selected');
-});
-
-$('#add_track_btn').on('click', function () {
-
-    //$('#modal_track_number')[0].value = $(this).children()[0].innerText;
-    //$('#modal_track_title')[0].value = $(this).children()[1].innerText;
-
-    $('#add_track_modal').modal();
-    $('#add_track_modal').modal('show');
-    $(this).toggleClass('selected');
-});
-
 $("#edit_album_form").on('submit', function (e) {
 
 
@@ -95,28 +61,29 @@ $("#edit_album_form").on('submit', function (e) {
 
     //ajax call here
 
-    var albumTitle = $('#inputTitle')[0].value;
-    var albumArtist = $('#inputArtist')[0].value;
-    var albumGenre = $('#inputGenre')[0].value;
-    var albumComment = $('#inputComment')[0].value;
-    var albumApproved = $('#approved_checkbox')[0].checked;
+    var model = $('#inputTitle')[0].value;
+    var brand = $('#inputArtist')[0].value;
+    var scale = $('#inputGenre')[0].value;
+    var comment = $('#inputComment')[0].value;
+
+    var replica_brand = "abc";
     //alert(isSamples);
 
     var cookie = getCookie('MusicDB_token');
-    var url_rest = base_url_rest + 'editAlbum';
+    var url_rest = base_url_rest + 'editCar';
 
     //alert('edit album');
 
     $.post(url_rest,
         {
             token: cookie,
-            albumArtist: albumArtist,
-            albumTitle: albumTitle,
-            albumGenre: albumGenre,
-            albumComment: albumComment,
-            albumApproved: albumApproved,
-            oldTitle: oldTitle,
-            oldArtist: oldArtist
+            brand: brand,
+            model: model,
+            scale: scale,
+            comment: comment,
+            replica_brand: replica_brand,
+            oldTitle: oldModel,
+            oldArtist: oldBrand
         },
         function (data, status) {
             var json = data;
@@ -136,9 +103,9 @@ $("#edit_album_form").on('submit', function (e) {
         $.post(url_rest,
             {
                 token: cookie,
-                albumArtist: albumArtist,
-                albumTitle: albumTitle,
-                albumPic: files[0]
+                brand: brand,
+                model: model,
+                carPic: files[0]
             },
             function (data, status) {
                 alert(data);
@@ -158,116 +125,6 @@ $("#edit_album_form").on('submit', function (e) {
 
 });
 
-
-$("#add_track_form").on('submit', function (e) {
-
-    e.preventDefault();
-
-    //ajax call here
-
-    var trackTitle = $('#add_modal_track_title')[0].value;
-    var trackNumber = $('#add_modal_track_number')[0].value;
-    //alert(isSamples);
-
-    var cookie = getCookie('MusicDB_token');
-    var url_rest = base_url_rest + 'addTrack';
-
-    //alert('edit album');
-
-    $.post(url_rest,
-        {
-            token: cookie,
-            albumArtist: oldArtist,
-            albumTitle: oldTitle,
-            trackTitle: trackTitle,
-            trackNumber: trackNumber
-        },
-        function (data, status) {
-            var json = data;
-            if (json != null && json['op'] == 'success') {
-                //alert('logout successful');
-                window.location.reload();
-            }
-            else {
-                alert('something is wrong:' + json['error']);
-                //window.location.href = "index.html";
-            }
-        });
-
-
-});
-
-$('#edit_track_delete_btn').click(function () {
-    must_delete = true;
-});
-
-$("#edit_track_form").on('submit', function (e) {
-
-    e.preventDefault();
-
-    //ajax call here
-    var cookie = getCookie('MusicDB_token');
-
-    if (must_delete == false) {
-        var trackTitle = $('#edit_track_modal_track_title')[0].value;
-        var trackNumber = $('#edit_track_modal_track_number')[0].value;
-        //alert(isSamples);
-
-        var url_rest = base_url_rest + 'editTrack';
-
-        //alert('edit album');
-
-        $.post(url_rest,
-            {
-                token: cookie,
-                albumArtist: oldArtist,
-                albumTitle: oldTitle,
-                trackTitle: trackTitle,
-                trackNumber: trackNumber,
-                oldTrackTitle: oldTrackTitle,
-                oldTrackNumber: oldTrackNumber
-            },
-            function (data, status) {
-                var json = data;
-                if (json != null && json['op'] == 'success') {
-                    //alert('logout successful');
-                    //window.location.reload();
-                }
-                else {
-                    alert('something is wrong:' + json['error']);
-                    //window.location.href = "index.html";
-                }
-            });
-    }
-    else {
-        var url_rest = base_url_rest + 'deleteTrack';
-
-        //alert('edit album');
-
-        $.post(url_rest,
-            {
-                token: cookie,
-                albumArtist: oldArtist,
-                albumTitle: oldTitle,
-                oldTrackNumber: oldTrackNumber
-            },
-            function (data, status) {
-                var json = data;
-                if (json != null && json['op'] == 'success') {
-                    //alert('logout successful');
-                    //window.location.reload();
-                }
-                else {
-                    alert('something is wrong:' + json['error']);
-                    //window.location.href = "index.html";
-                }
-            });
-    }
-
-
-    window.location.reload();
-
-});
 
 $("#upload_pic_form").on('submit', function (e) {
 
@@ -291,8 +148,8 @@ $("#upload_pic_form").on('submit', function (e) {
      }
      });
      */
-    var albumTitle = oldTitle;
-    var albumArtist = oldArtist;
+    var model = oldModel;
+    var brand = oldBrand;
 
 
     if ($('input[type=file]#inputPic').val() != "") {
@@ -320,8 +177,8 @@ $("#upload_pic_form").on('submit', function (e) {
             */
         var formData = new FormData();
         formData.append('token', cookie);
-        formData.append('albumArtist', albumArtist);
-        formData.append('albumTitle', albumTitle);
+        formData.append('brand', brand);
+        formData.append('model', model);
         formData.append('avatar', $('input[type=file]')[0].files[0]);
 
         $.ajax({
