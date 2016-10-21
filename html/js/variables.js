@@ -9,6 +9,6 @@
  }
  else
  {
-	var base_url_rest = "https://musicbackendrest.herokuapp.com/";
-	var base_url_for_pics = "https://musicbackendrest.herokuapp.com/getPicture?pic_name=";
+	var base_url_rest = "https://carsdbrest.herokuapp.com/";
+	var base_url_for_pics = "https://carsdbrest.herokuapp.com/getPicture?pic_name=";
  }
