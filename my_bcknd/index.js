@@ -1,7 +1,7 @@
 var app = require('express')();
 var http = require('http');
 var fs = require('fs');
-var serverPort = 8090;
+var serverPort = 3001;
 var async = require("async");
 var bodyParser = require('body-parser');
 var jsonfile = require('jsonfile');
@@ -389,7 +389,7 @@ app.post('/uploadPic_template', upload.single('avatar'), function (req, res, nex
 
 /**** Put server running ****/
 
-var server = app.listen(8090, function () {
+var server = app.listen(serverPort, function () {
 
     var host = server.address().address;
     var port = server.address().port;
