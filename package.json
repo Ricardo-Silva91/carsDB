@@ -1,37 +1,25 @@
 {
-  "name": "musicdb_backend",
-  "version": "1.0.0",
-  "description": "nodejs server for backend operations for the music logging app",
+  "name": "cars-rest-api",
+  "version": "0.0.0",
+  "description": "API for carDB REST Server",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Ricardo-Silva91/musicDB_backend.git"
-  },
+	"prestart": "npm install",
+	"start": "node index.js"
+  },  
   "keywords": [
-    "node",
-    "js",
-    "music",
-    "logging",
-    "backend"
+    "swagger"
   ],
-  "author": "rofler",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Ricardo-Silva91/musicDB_backend/issues"
-  },
-  "homepage": "https://github.com/Ricardo-Silva91/musicDB_backend#readme",
+  "license": "Apache-2.0",
+  "private": true,
   "dependencies": {
-    "async": "^2.0.1",
-    "body-parser": "^1.15.2",
-    "express": "^4.14.0",
     "fs": "0.0.1-security",
-    "http": "0.0.0",
-    "https": "^1.0.0",
-    "jsonfile": "^2.3.1",
-    "multer": "^1.2.0"
+    "async": "^1.3.0",
+    "connect": "^3.2.0",
+    "express": "^4.14.0",
+    "crypto-js": "^3.1.8",
+    "multer": "^1.2.0",
+    "body-parser": "^1.15.2",
+    "jsonfile": "^2.4.0"
   }
 }

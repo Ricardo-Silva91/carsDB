@@ -1,1 +1,0 @@
-albums=[{"title":"Z3","artist":"hedthfgf","tracks":[],"approved":true,"genre":"diesel","pic_name":"0.jpg","date_included":"09/04/2016","comment":"","id":0},{"title":"thtf","artist":"ssdg","approved":false,"genre":"","pic_name":"notAvailable.jpg","date_included":"09/04/2016","comment":"","id":1}]
