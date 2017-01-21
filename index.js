@@ -1,6 +1,6 @@
-
 /********************* Break! beyond this point only web page stuff! ***********************/
 
+var db_url = "http://188.37.120.37:3001/";
 
 var wepPage_express = require("express");
 var wepPage_app2 = wepPage_express();
@@ -40,6 +40,45 @@ wepPage_router.get("/getPicture", function (req, res) {
     }
 });
 
+
+var proxy = require('http-proxy').createProxyServer({
+    host: db_url,
+    // port: 80
+});
+wepPage_router.use(
+    [
+    '/rest_server'
+    ],
+    function (req, res, next) {
+
+        console.log(req.url);
+
+        proxy.web(req, res, {
+            target: db_url
+        }, next);
+});
+
+/*
+wepPage_router.get(
+    [
+        '/checkValidToken',
+        '/allCars',
+        '/getCarPic',
+        '/oneCar',
+        '/addCar',
+        '/editCar',
+        '/login',
+        '/uploadPic_template',
+        '/farcus/:farcus/',
+        '/hoop(|la|lapoo|lul)/poo'
+    ],
+    function (req, res) {
+        res.json({
+            abc: "jogos"
+        });
+    });
+*/
+
 wepPage_app2.use("/", wepPage_router);
 
 wepPage_app2.use(wepPage_express.static(__dirname));
@@ -57,10 +96,10 @@ var webPage_server2 = wepPage_app2.listen(process.env.PORT || 5001, function () 
     console.log("Web page Live at http://%s:%s", host, port);
 });
 /*
-var webPage_server2 = wepPage_https.createServer(options, wepPage_app2).listen(process.env.PORT || 443, function () {
+ var webPage_server2 = wepPage_https.createServer(options, wepPage_app2).listen(process.env.PORT || 443, function () {
 
-    var host = webPage_server2.address().address;
-    var port = webPage_server2.address().port;
+ var host = webPage_server2.address().address;
+ var port = webPage_server2.address().port;
 
-    console.log('Secure Web page Live at https://%s:%s', host, port);
-});*/
+ console.log('Secure Web page Live at https://%s:%s', host, port);
+ });*/

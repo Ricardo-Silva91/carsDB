@@ -9,6 +9,6 @@ var going_local = false;
  }
  else
  {
-	var base_url_rest = "http://188.37.120.37:3001/";
-	var base_url_for_pics = "http://188.37.120.37:3001/getCarPic?carId=";
+     var base_url_rest = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '') + "/rest_server/";
+     var base_url_for_pics = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '') + "/rest_server/getCarPic?carId=";
  }
