@@ -176,29 +176,6 @@ $("#upload_pic_form").on('submit', function (e) {
 
 
     if ($('input[type=file]#inputPic').val() != "") {
-        //alert('upload pic: ' + url_rest);
-        /*   $.post(url_rest,
-         {
-         token: cookie,
-         albumArtist: albumArtist,
-         albumTitle: albumTitle,
-         avatar: files[0]
-         },
-         function (data, status) {
-         alert(data);
-         var json = data;
-         if (json != null && json['op'] == 'success') {
-         alert('logout successful');
-         window.location.reload();
-         }
-         else {
-         alert('something is wrong:' + json['error']);
-         //window.location.href = "index.html";
-         }
-         });
-         */
-
-
         var file = $('input[type=file]')[0].files[0];
 
         if(file.type.match(/image.*/)) {
