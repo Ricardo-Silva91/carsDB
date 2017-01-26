@@ -68,11 +68,11 @@ function getBrands() {
 
 $("#brandDropdown").change(function() {
 
-    $(function () {
-        $('#dg-container').gallery({
-            autoplay: false
-        });
-    });
+
+    $('#carouselContainer').html('<section id="dg-container" class="dg-container">' +
+        '<div class="dg-wrapper">' +
+        '</div>' +
+        '</section>');
 
     currentBrand = $('#brandDropdown')[0].value;
     filterCarsByBrand(currentBrand);
