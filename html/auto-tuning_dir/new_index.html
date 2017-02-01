@@ -12,6 +12,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href='https://fonts.googleapis.com/css?family=Anaheim' rel='stylesheet' type='text/css'>
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+
+
     <!--slider-->
     <script type="text/javascript" src="js/modernizr.custom.53451.js"></script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -35,30 +41,94 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div id="carouselContainer" class="container">
             <section id="dg-container" class="dg-container">
                 <div class="dg-wrapper"
-                </div>
-            </section>
         </div>
-    </div>
-    <div class="main">
-        <div id="extensiveCars" class="section group">
-        </div>
-    </div>
-    <div class="footer">
-        <div class="f_left">
-            <div class="f_nav">
-
-            </div>
-            <div class="copy">
-                <p class="w3-link">© All Rights Reserved | Design by&nbsp; <a href="http://w3layouts.com/">
-                    W3Layouts</a> | Edited by BadReviews</p>
-            </div>
-        </div>
-        <div class="social-icons">
-
-        </div>
-        <div class="clear"></div>
+        </section>
     </div>
 </div>
+<div class="main">
+    <div id="extensiveCars" class="section group">
+    </div>
+</div>
+<div class="footer">
+    <div class="f_left">
+        <div class="f_nav">
+
+        </div>
+        <div class="copy">
+            <p class="w3-link">© All Rights Reserved | Design by&nbsp; <a href="http://w3layouts.com/">
+                W3Layouts</a> | Edited by BadReviews</p>
+        </div>
+    </div>
+    <div class="social-icons copy">
+
+        <a href="../login.html"><p class="w3-link">go to backend...</p></a>
+
+    </div>
+    <div class="clear"></div>
+</div>
+</div>
+
+<div id="modals">
+
+    <div class="modal fade" id="CarDetailsModal" role="dialog" style="background-color: rgba(0, 0, 0, 0.780392)">
+        <div class="modal-dialog modal-lg ">
+
+            <!-- Modal content-->
+            <div class="modal-content " style="background-color: rgb(12, 12, 12);">
+                <div class="modal-header ">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" id="modalTitle0"> Car Details </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <h6><strong>ID</strong></h6>
+                            <h6><strong>Model</strong></h6>
+                            <h6><strong>Brand</strong></h6>
+                            <h6><strong>Replica Brand</strong></h6>
+                            <h6><strong>Scale</strong></h6>
+                            <h6><strong>Date Included</strong></h6>
+                            <h6><strong>Comments</strong></h6>
+
+
+                        </div>
+                        <div class="col-sm-8">
+                            <h6 id="modalID">02051</h6>
+                            <h6 id="modalModel">descrição do produto</h6>
+                            <h6 id="modalBrand">Marca do produto</h6>
+                            <h6 id="modalReplica">0230316</h6>
+                            <h6 id="modalScale">0321649843</h6>
+                            <h6 id="modalDate">50</h6>
+                            <h6 id="modalComments">032165</h6>
+                        </div>
+
+                    </div>
+
+                    <div class="">
+                        <img id="modalPic" src="http://lorempixel.com/150/150/technics/" alt="teste" class="">
+                    </div>
+
+                    <div class="clearfix"></div>
+                </div>
+                <!--<div class="modal-footer">
+
+                </div>-->
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.1.1/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.1.1/js/responsive.bootstrap.min.js"></script>
+
 
 <script src="../js/variables.js"></script>
 <script src="js/mine_rest_client.js"></script>
