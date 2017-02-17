@@ -1,6 +1,6 @@
 /********************* Break! beyond this point only web page stuff! ***********************/
 
-var db_url = "http://188.37.120.37:3001/";
+var db_url = "http://94.63.5.193:3001/";
 
 var wepPage_express = require("express");
 var wepPage_app2 = wepPage_express();
